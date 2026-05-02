@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: #060812;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #060812;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(255, 143, 184, 0.35);
+}
+
+.stars-layer,
+.stars-layer::before,
+.stars-layer::after {
+  position: absolute;
+  inset: -20%;
+  content: "";
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.9) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 143, 184, 0.65) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(248, 244, 223, 0.8) 0 1px, transparent 1.5px);
+  background-position:
+    0 0,
+    40px 80px,
+    120px 30px;
+  background-size:
+    150px 150px,
+    210px 210px,
+    260px 260px;
+  animation: drift 46s linear infinite alternate;
+}
+
+.stars-layer::before {
+  transform: rotate(12deg);
+  animation-duration: 58s;
+}
+
+.stars-layer::after {
+  transform: rotate(-8deg);
+  animation-duration: 68s;
+}
+
+.stars-layer-two {
+  filter: blur(0.5px);
+  transform: scale(1.2);
+}
