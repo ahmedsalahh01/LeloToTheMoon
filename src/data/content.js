@@ -1,3 +1,7 @@
+import photo1 from "../assets/memories/photo1.jpeg";
+import photo2 from "../assets/memories/photo2.jpeg";
+import photo3 from "../assets/memories/photo3.jpeg";
+
 export const moonData = {
   date: "May 6, 2000",
   phase: "Waxing Crescent",
@@ -109,23 +113,22 @@ Ana bahebek ya Laila, w hafdal ahebek le akher youm leya fe 3umry.`,
   },
 ];
 
-// Add your real photos inside src/assets/memories/ with these names,
-// or change each image path below to match your own files.
+// Add your real photos inside src/assets/memories/ and import them above.
 export const memories = [
   {
-    image: "/src/assets/memories/photo1.jpeg",
+    image: photo1,
     title: "The Day I knew that I loved you more than I thought",
     description: "Da ana hageb ta'm bedal gdeed 3shan khater tehbeny aktar bsbb el youm da",
     text: "",
   },
   {
-    image: "/src/assets/memories/photo2.jpeg",
+    image: photo2,
     title: "Love Record",
     description: "Ana hena et'akedt eny msh ha'dar a3esh mn gherek, w eny lw kunt bahebek awy, fana ba3d el call dy ba3sha'ekk aktar mn el awyy bzeyada, hub msh genan bs, hub edman",
     text: "",
   },
   {
-    image: "/src/assets/memories/photo3.jpeg",
+    image: photo3,
     title: "Youm w ehsas 3umry ma hansah",
     description: "Ana hena bgd hasseit enk m3aya w ganby w gy w hanakul sawa w netntat sawa w neshar sawa, w aheb feky lehad ma el shams tetla3",
     text: "",
