@@ -27,18 +27,18 @@ export default function MusicSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.65, delay: 0.1 }}
-          className="mt-10 overflow-hidden rounded-[1.75rem] border border-white/12 bg-white/[0.07] p-3 shadow-glass backdrop-blur-xl"
+          className="mx-auto mt-10 w-full max-w-[690px] overflow-hidden rounded-[1.25rem] border border-white/20 bg-black/20 p-2 shadow-glass backdrop-blur-xl"
         >
           <iframe
             title={spotifyPlaylist.title}
             src={spotifyPlaylist.embedUrl}
             width="100%"
-            height="352"
+            height="152"
             frameBorder="0"
             allowFullScreen
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
-            className="block rounded-[1.25rem]"
+            className="block rounded-xl"
           />
         </motion.div>
       </div>

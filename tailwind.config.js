@@ -14,7 +14,7 @@ export default {
         body: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        moon: "0 0 42px rgba(248, 244, 223, 0.55), 0 0 110px rgba(255, 143, 184, 0.18)",
+        moon: "0 0 52px rgba(248, 244, 223, 0.65), 0 0 130px rgba(248, 244, 223, 0.20), 0 0 200px rgba(255, 143, 184, 0.12)",
         glass: "0 20px 70px rgba(0, 0, 0, 0.32)",
       },
       backgroundImage: {

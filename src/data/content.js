@@ -83,7 +83,7 @@ export const questionJourney = {
 // Add, remove, or rename letters here. The page will update automatically.
 export const letters = [
   {
-    title: "Letter One",
+    title: "Part 1",
     body: `KUL SANAAAAA WENTYYYYY TAYEBAAAAA YA HAYATYYYYY W RUHY W ALBYYYYY W 3A'LYYY W 3UMRYYYY W DENYTYYYY KULAAHAAAAAAAAAAA.
 
 Ana bgd ya lailaaaaa mestanyyy el youm da ba'aly kter awy, mestany a'ulk aktar ana bahebk ad eh (3la ad ma'dar la'en mafesh haga twsef), w ad ehhh entyy kbeera awy 3andy w ghalya awy 3andy w hubek msh mugarad hub 3adyy, da hayah w gannaaa, wugudek lewahdu ne3maa fe hayaty w hayat ay had ya Laila.
@@ -97,7 +97,7 @@ Ana bahebekk ya lailaa bkul helwekk w wehshekk la'en hatta 3youbk bensbaly leha 
 BAHEBEKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK`,
   },
   {
-    title: "Letter Two",
+    title: "Part 2",
     body: `Aktar youm kunt mestaneeh mn awel ma 3erftek w habeitek, aktar youm kan nefsy akun ganbek w m3aky w shayfek odamy wana bahtafel beky w bakhleeh ahla youm fe hayatek, 3shan bensbaly da ahla youm 3shan da etawaldt feh aktar bane'adma ana habeitha fe hayaty.
 
 Enty aktar omneya kan nefsy feha w ahla helm ana helmtu 3ada 3alya fe hayaty w hayfdal dayman mahfur gwaya tul mana batnafes w 3ayesh, 3ayesh 3la ahla hub gwayaa, 3ayesh 3la ahla zekra le aktar wahda henayna w tayeba w gameela w amar w helwaa ana shuftaha fe hayaty,ana harfeyan hafdal afakar feky kul youm ye3ady 3alya w a'ul w atkhyal kul haga nefsy feha m3aky m3 nafsy w mugarad el takhyul hykhleny hamut mn el farhaa, 3la ad ma hatwhasheny bshakl ana 3aref enu hayganeny w hayegy 3alya aw'at hahes feha bekt'ab gamed, 3la ad mana hafdal afakar feky w akun mabsut w ashuf kalamna w hezarna w masha3ernaa w hubna w kul haga gwanaa lma aftkerha hathawen 3alya el bu3d.
