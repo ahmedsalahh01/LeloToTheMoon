@@ -7,7 +7,7 @@
 :root {
   color-scheme: dark;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-  background: #060812;
+  background: #070a0c;
   scroll-behavior: smooth;
 }
 
@@ -19,7 +19,10 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #060812;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(255, 179, 207, 0.14), transparent 26%),
+    radial-gradient(circle at 8% 46%, rgba(158, 231, 215, 0.12), transparent 28%),
+    linear-gradient(180deg, #070a0c 0%, #111416 46%, #08090a 100%);
 }
 
 button {
@@ -27,7 +30,404 @@ button {
 }
 
 ::selection {
-  background: rgba(255, 143, 184, 0.35);
+  background: rgba(158, 231, 215, 0.32);
+}
+
+.site-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(7, 10, 12, 0.82) 0%, rgba(7, 10, 12, 0.42) 44%, rgba(7, 10, 12, 0.2) 100%),
+    linear-gradient(180deg, rgba(7, 10, 12, 0.12) 0%, rgba(7, 10, 12, 0.78) 100%);
+}
+
+.moon-backdrop {
+  position: fixed;
+  z-index: 0;
+  top: clamp(24px, 6vw, 74px);
+  right: clamp(-360px, -18vw, -120px);
+  width: min(980px, 118vw);
+  aspect-ratio: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 0 34px rgba(255, 247, 219, 0.5))
+    drop-shadow(0 0 120px rgba(158, 231, 215, 0.1));
+  opacity: 0.96;
+}
+
+.moon-backdrop::before {
+  position: absolute;
+  inset: -12%;
+  content: "";
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(255, 247, 219, 0.28), transparent 60%),
+    radial-gradient(circle, rgba(255, 179, 207, 0.12), transparent 72%);
+  filter: blur(24px);
+}
+
+.moon-surface {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 999px;
+  background:
+    radial-gradient(ellipse 18% 14% at 32% 28%, rgba(79, 69, 55, 0.24) 0%, transparent 100%),
+    radial-gradient(ellipse 27% 20% at 62% 40%, rgba(78, 68, 55, 0.3) 0%, transparent 100%),
+    radial-gradient(ellipse 16% 13% at 44% 67%, rgba(70, 60, 48, 0.24) 0%, transparent 100%),
+    radial-gradient(circle at 38% 42%, rgba(75, 65, 51, 0.18) 0 1.6%, rgba(255, 253, 237, 0.2) 1.7% 2.5%, transparent 2.6%),
+    radial-gradient(circle at 68% 58%, rgba(75, 65, 51, 0.2) 0 2.4%, rgba(255, 253, 237, 0.16) 2.5% 3.2%, transparent 3.3%),
+    radial-gradient(circle at 54% 24%, rgba(75, 65, 51, 0.17) 0 1.2%, rgba(255, 253, 237, 0.14) 1.3% 2%, transparent 2.1%),
+    radial-gradient(circle at 50% 42%, #fff9dc 0%, #e5d5a5 36%, #ad9e78 68%, #746a55 100%);
+}
+
+.moon-surface::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 44% 38%, transparent 0 48%, rgba(0, 0, 0, 0.18) 72%, rgba(0, 0, 0, 0.54) 100%),
+    linear-gradient(95deg, rgba(255, 255, 255, 0.16), transparent 42%);
+  mix-blend-mode: multiply;
+}
+
+.moon-shadow {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background:
+    radial-gradient(ellipse at 30% 50%, transparent 0 31%, rgba(7, 10, 12, 0.38) 46%, #070a0c 72%);
+  transform: translateX(-17%);
+  box-shadow: inset -28px 0 42px rgba(255, 247, 219, 0.06);
+}
+
+.section-shell {
+  position: relative;
+  padding: 6rem 1.25rem;
+}
+
+.section-kicker {
+  color: rgba(158, 231, 215, 0.84);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin-top: 1rem;
+  color: #fff7db;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.7rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  text-wrap: balance;
+}
+
+.letter-panel {
+  position: relative;
+  min-height: 18rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.5rem;
+  background:
+    linear-gradient(135deg, rgba(16, 23, 25, 0.88), rgba(18, 16, 21, 0.76)),
+    linear-gradient(180deg, rgba(255, 247, 219, 0.04), transparent);
+  box-shadow: 0 22px 80px rgba(0, 0, 0, 0.36);
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  backdrop-filter: blur(20px);
+}
+
+.letter-panel::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(158, 231, 215, 0.16), transparent 24%),
+    linear-gradient(180deg, rgba(255, 179, 207, 0.12), transparent 34%);
+  opacity: 0.72;
+}
+
+.letter-panel > * {
+  position: relative;
+}
+
+.age-orbit {
+  position: relative;
+  min-height: clamp(420px, 52vw, 620px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.5rem;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 247, 219, 0.14), transparent 18%),
+    radial-gradient(circle at 28% 24%, rgba(158, 231, 215, 0.13), transparent 28%),
+    linear-gradient(135deg, rgba(16, 23, 25, 0.74), rgba(18, 16, 21, 0.66));
+  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.36);
+  overflow: hidden;
+  backdrop-filter: blur(18px);
+}
+
+.age-orbit::before {
+  position: absolute;
+  inset: 10%;
+  content: "";
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(255, 247, 219, 0.18), transparent 9%),
+    radial-gradient(circle, transparent 42%, rgba(158, 231, 215, 0.08) 43%, transparent 45%);
+  filter: blur(0.2px);
+}
+
+.age-orbit-ring {
+  position: absolute;
+  inset: 17%;
+  border: 1px solid rgba(255, 247, 219, 0.16);
+  border-radius: 999px;
+}
+
+.age-orbit-ring-one {
+  animation: spin 18s linear infinite;
+}
+
+.age-orbit-ring-two {
+  inset: 27%;
+  border-color: rgba(255, 179, 207, 0.16);
+  transform: rotate(18deg) scaleX(1.16);
+  animation: spinReverse 24s linear infinite;
+}
+
+.age-orbit-core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  width: min(260px, 58vw);
+  aspect-ratio: 1;
+  place-items: center;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 247, 219, 0.18);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 44% 34%, rgba(255, 247, 219, 0.18), transparent 42%),
+    rgba(7, 10, 12, 0.62);
+  box-shadow:
+    inset 0 0 46px rgba(255, 247, 219, 0.08),
+    0 0 70px rgba(255, 247, 219, 0.12);
+  transform: translate(-50%, -50%);
+}
+
+.age-orbit-stat {
+  position: absolute;
+  display: grid;
+  min-width: 7.25rem;
+  gap: 0.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.5rem;
+  background: rgba(7, 10, 12, 0.58);
+  padding: 0.95rem 1rem;
+  text-align: center;
+  backdrop-filter: blur(14px);
+}
+
+.age-orbit-stat span {
+  color: #fff7db;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.age-orbit-stat small {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.age-orbit-stat-1 {
+  left: 8%;
+  top: 14%;
+}
+
+.age-orbit-stat-2 {
+  right: 9%;
+  top: 18%;
+}
+
+.age-orbit-stat-3 {
+  left: 13%;
+  bottom: 16%;
+}
+
+.age-orbit-stat-4 {
+  right: 10%;
+  bottom: 14%;
+}
+
+.gold-stat-box {
+  border: 1px solid rgba(255, 220, 130, 0.72);
+  background:
+    radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.42), transparent 22%),
+    linear-gradient(135deg, rgba(255, 225, 144, 0.96), rgba(198, 142, 43, 0.92));
+  box-shadow:
+    0 0 28px rgba(255, 208, 96, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.42);
+}
+
+.constellation-panel {
+  position: relative;
+  min-height: clamp(720px, 72vw, 900px);
+  width: min(100%, 1280px);
+  margin-inline: auto;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.5rem;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 0 0.8px, transparent 1.4px) 18px 26px / 74px 74px,
+    radial-gradient(circle, rgba(158, 231, 215, 0.58) 0 0.8px, transparent 1.4px) 42px 12px / 118px 118px,
+    radial-gradient(circle, rgba(255, 179, 207, 0.5) 0 0.8px, transparent 1.4px) 12px 58px / 156px 156px,
+    radial-gradient(circle at 24% 18%, rgba(255, 179, 207, 0.13), transparent 24%),
+    radial-gradient(circle at 76% 24%, rgba(158, 231, 215, 0.12), transparent 24%),
+    linear-gradient(135deg, rgba(16, 23, 25, 0.76), rgba(9, 11, 12, 0.72));
+  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.36);
+  backdrop-filter: blur(18px);
+}
+
+.constellation-lines {
+  position: absolute;
+  inset: 10%;
+  opacity: 0.46;
+  background:
+    linear-gradient(25deg, transparent 12%, rgba(255, 247, 219, 0.24) 12.2%, transparent 12.7%),
+    linear-gradient(146deg, transparent 35%, rgba(158, 231, 215, 0.2) 35.2%, transparent 35.7%),
+    linear-gradient(96deg, transparent 56%, rgba(255, 179, 207, 0.2) 56.2%, transparent 56.8%);
+}
+
+.love-star {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  width: 3.4rem;
+  height: 3.4rem;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  color: #fff7db;
+  background: transparent;
+  cursor: pointer;
+  transform:
+    rotate(var(--reason-angle))
+    translateX(min(36vw, 430px))
+    scaleY(0.78)
+    translate(-50%, -50%);
+  z-index: 3;
+}
+
+.love-star span {
+  display: grid;
+  width: calc(1.35rem * var(--reason-star-scale));
+  height: calc(1.35rem * var(--reason-star-scale));
+  place-items: center;
+  color: #fff7db;
+  font-size: calc(1.35rem * var(--reason-star-scale));
+  line-height: 1;
+  text-shadow:
+    0 0 12px rgba(255, 247, 219, 0.96),
+    0 0 34px rgba(255, 179, 207, 0.44);
+  transition:
+    transform 220ms ease,
+    color 220ms ease,
+    text-shadow 220ms ease;
+}
+
+.love-star:hover span,
+.love-star-active span {
+  color: #9ee7d7;
+  text-shadow:
+    0 0 16px rgba(158, 231, 215, 0.98),
+    0 0 52px rgba(158, 231, 215, 0.52);
+  transform: scale(1.28) rotate(9deg);
+}
+
+.love-star-special span,
+.love-star-special:hover span,
+.love-star-special.love-star-active span {
+  color: #ff8fbe;
+  text-shadow:
+    0 0 16px rgba(255, 143, 190, 0.98),
+    0 0 52px rgba(255, 143, 190, 0.56);
+}
+
+.love-star:focus-visible {
+  outline: 2px solid rgba(158, 231, 215, 0.75);
+  outline-offset: 3px;
+}
+
+.constellation-message-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(430px, calc(100% - 2rem));
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.constellation-message {
+  position: relative;
+  display: flex;
+  min-height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 247, 219, 0.34);
+  border-radius: 999px;
+  background:
+    radial-gradient(ellipse 24% 18% at 35% 28%, rgba(86, 74, 56, 0.2) 0%, transparent 100%),
+    radial-gradient(ellipse 28% 20% at 66% 43%, rgba(74, 63, 50, 0.24) 0%, transparent 100%),
+    radial-gradient(circle at 43% 40%, rgba(84, 70, 50, 0.2) 0 2.3%, rgba(255, 253, 237, 0.16) 2.4% 3.4%, transparent 3.5%),
+    radial-gradient(circle at 63% 61%, rgba(84, 70, 50, 0.18) 0 3.2%, rgba(255, 253, 237, 0.12) 3.3% 4.2%, transparent 4.3%),
+    radial-gradient(circle at 50% 45%, #fff8dc 0%, #e8d9ad 40%, #aa9a78 76%, #6d6352 100%);
+  padding: clamp(2rem, 5vw, 3rem);
+  box-shadow:
+    inset -24px -34px 64px rgba(20, 15, 8, 0.4),
+    inset 18px 16px 40px rgba(255, 255, 255, 0.16),
+    0 0 48px rgba(255, 247, 219, 0.24),
+    0 0 110px rgba(255, 179, 207, 0.12);
+  text-align: center;
+}
+
+.constellation-message::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 44% 38%, transparent 0 48%, rgba(0, 0, 0, 0.14) 76%, rgba(0, 0, 0, 0.42) 100%),
+    linear-gradient(115deg, rgba(255, 255, 255, 0.24), transparent 42%);
+  pointer-events: none;
+}
+
+.constellation-message > * {
+  position: relative;
+}
+
+.constellation-message .text-\[\#9ee7d7\]\/80 {
+  color: rgba(64, 72, 70, 0.7);
+}
+
+.constellation-message h3 {
+  color: #2e271b;
+}
+
+.constellation-message p:last-child {
+  max-width: 19rem;
+  color: rgba(34, 29, 22, 0.78);
 }
 
 .stars-layer,
@@ -38,16 +438,19 @@ button {
   content: "";
   background-image:
     radial-gradient(circle, rgba(255, 255, 255, 0.9) 0 1px, transparent 1.5px),
-    radial-gradient(circle, rgba(255, 143, 184, 0.65) 0 1px, transparent 1.5px),
-    radial-gradient(circle, rgba(248, 244, 223, 0.8) 0 1px, transparent 1.5px);
+    radial-gradient(circle, rgba(158, 231, 215, 0.62) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 247, 219, 0.78) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 179, 207, 0.58) 0 0.8px, transparent 1.4px);
   background-position:
     0 0,
     40px 80px,
-    120px 30px;
+    120px 30px,
+    70px 20px;
   background-size:
     150px 150px,
     210px 210px,
-    260px 260px;
+    260px 260px,
+    95px 95px;
   animation: drift 46s linear infinite alternate;
 }
 
@@ -64,4 +467,200 @@ button {
 .stars-layer-two {
   filter: blur(0.5px);
   transform: scale(1.2);
+}
+
+.stars-layer-three {
+  filter: blur(0.2px);
+  transform: scale(0.92) rotate(7deg);
+}
+
+.stars-layer-three,
+.stars-layer-three::before,
+.stars-layer-three::after {
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.82) 0 0.7px, transparent 1.2px),
+    radial-gradient(circle, rgba(255, 247, 219, 0.68) 0 0.9px, transparent 1.4px),
+    radial-gradient(circle, rgba(158, 231, 215, 0.5) 0 0.8px, transparent 1.4px);
+  background-size:
+    82px 82px,
+    118px 118px,
+    174px 174px;
+  background-position:
+    16px 18px,
+    62px 44px,
+    122px 90px;
+  animation-duration: 74s;
+}
+
+.bright-star {
+  position: absolute;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: #fff7db;
+  box-shadow:
+    0 0 12px rgba(255, 247, 219, 0.92),
+    0 0 34px rgba(255, 247, 219, 0.34);
+  animation: twinkle 3.4s ease-in-out infinite;
+}
+
+.bright-star::before,
+.bright-star::after {
+  position: absolute;
+  inset: 50%;
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 247, 219, 0.9), transparent);
+  transform: translate(-50%, -50%);
+}
+
+.bright-star::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.bright-star-pink {
+  background: #ffb3cf;
+  box-shadow:
+    0 0 12px rgba(255, 179, 207, 0.9),
+    0 0 34px rgba(255, 179, 207, 0.3);
+  animation-delay: 1s;
+}
+
+.bright-star-teal {
+  background: #9ee7d7;
+  box-shadow:
+    0 0 12px rgba(158, 231, 215, 0.9),
+    0 0 34px rgba(158, 231, 215, 0.3);
+  animation-delay: 1.8s;
+}
+
+.falling-stars {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.falling-star {
+  position: absolute;
+  top: -14%;
+  width: 0.28rem;
+  height: 0.28rem;
+  border-radius: 999px;
+  background: #fff7db;
+  box-shadow:
+    0 0 12px rgba(255, 247, 219, 0.95),
+    0 0 28px rgba(255, 179, 207, 0.34);
+  opacity: 0;
+  animation: starFall 2.2s cubic-bezier(0.22, 0.7, 0.22, 1) forwards;
+}
+
+.falling-star::after {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  width: 5.2rem;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(255, 247, 219, 0.8));
+  transform: translateY(-50%) rotate(-34deg);
+  transform-origin: right center;
+}
+
+.falling-star-md {
+  width: 0.36rem;
+  height: 0.36rem;
+  background: #9ee7d7;
+}
+
+.falling-star-lg {
+  width: 0.46rem;
+  height: 0.46rem;
+  background: #ffb3cf;
+}
+
+@keyframes starFall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -20vh, 0) rotate(0deg);
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  82% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(-26vw, 118vh, 0) rotate(18deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg) scaleX(1.14);
+  }
+
+  to {
+    transform: rotate(360deg) scaleX(1.14);
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(18deg) scaleX(1.16);
+  }
+
+  to {
+    transform: rotate(-342deg) scaleX(1.16);
+  }
+}
+
+@media (max-width: 780px) {
+  .site-veil {
+    background:
+      linear-gradient(180deg, rgba(7, 10, 12, 0.36) 0%, rgba(7, 10, 12, 0.82) 62%, rgba(7, 10, 12, 0.92) 100%);
+  }
+
+  .moon-backdrop {
+    top: 5rem;
+    right: -38rem;
+    width: 720px;
+    opacity: 0.76;
+  }
+
+  .section-shell {
+    padding-block: 5rem;
+  }
+
+  .age-orbit {
+    min-height: 560px;
+  }
+
+  .age-orbit-stat {
+    min-width: 6.2rem;
+    padding: 0.8rem;
+  }
+
+  .age-orbit-stat span {
+    font-size: 1.75rem;
+  }
+
+  .constellation-panel {
+    min-height: 660px;
+  }
+
+  .love-star {
+    top: 50%;
+    transform:
+      rotate(var(--reason-angle))
+      translateX(min(34vw, 220px))
+      scaleY(0.82)
+      translate(-50%, -50%);
+  }
 }

@@ -110,56 +110,48 @@ export default function Hero() {
   };
 
   return (
-    <section id="top" className="relative flex min-h-screen items-center overflow-hidden px-5 py-20">
-      <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-[1fr_0.9fr]">
+    <section id="top" className="relative flex min-h-screen items-center overflow-hidden px-5 pb-20 pt-24">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-end gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="text-center lg:text-left"
+          className="max-w-4xl text-center lg:text-left"
         >
-          <p className="mb-4 text-sm uppercase tracking-[0.34em] text-roseglow/80">
-            Lelo's Special Day
+          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.34em] text-[#9ee7d7]">
+            A private moon for Nessma
           </p>
-          <h1 className="font-display text-5xl leading-[0.95] text-moon sm:text-7xl lg:text-8xl">
-            The Moon on the Day You Were Born
+          <h1 className="font-display text-5xl leading-[0.9] text-[#fff7db] drop-shadow-[0_0_28px_rgba(255,245,206,0.28)] sm:text-7xl lg:text-8xl">
+            Nessma, a new moon that was born on earth and my heart.
           </h1>
-          <p className="mt-6 font-display text-3xl text-white sm:text-4xl">
+          <p className="mt-7 font-display text-3xl text-[#ffb3cf] sm:text-4xl">
             {moonData.date}
           </p>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/76 lg:mx-0">
-            A waxing crescent moon, just like the beginning of something beautiful. 
-            This is not just a normal day, it's the day the light to my heart was born. 
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/76 lg:mx-0">
+            This place is our universe, our own world and heaven, because wherever
+            you are and you exist is literal heaven on earth.
           </p>
-          <button
-            type="button"
-            onClick={scrollToJourney}
-            className="mt-10 rounded-full border border-roseglow/40 bg-roseglow px-8 py-4 font-semibold text-[#210918] shadow-[0_0_32px_rgba(255,143,184,0.35)] transition hover:-translate-y-1 hover:bg-white focus:outline-none focus:ring-4 focus:ring-roseglow/30"
-          >
-            Start the Journey
-          </button>
-          <div className="mx-auto mt-8 w-full max-w-[690px] overflow-hidden rounded-[1.25rem] border border-white/20 bg-black/20 p-2 shadow-glass backdrop-blur-xl">
-            <iframe
-              title="Birthday dance song"
-              src="https://open.spotify.com/embed/track/24byEXJQtVfo8ySx5vsHWo?utm_source=generator&theme=0"
-              width="100%"
-              height="152"
-              frameBorder="0"
-              allowFullScreen
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-              className="block rounded-xl"
-            />
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
+            <button
+              type="button"
+              onClick={scrollToJourney}
+              className="rounded-full bg-[#fff7db] px-8 py-4 font-semibold text-[#151018] shadow-[0_0_36px_rgba(255,247,219,0.28)] transition hover:-translate-y-1 hover:bg-[#ffb3cf] focus:outline-none focus:ring-4 focus:ring-[#ffb3cf]/30"
+            >
+              Open your moon letter
+            </button>
+            <a
+              href="#feelings"
+              className="rounded-full border border-white/20 bg-white/[0.06] px-8 py-4 font-semibold text-white/82 backdrop-blur-md transition hover:-translate-y-1 hover:border-[#9ee7d7]/60 hover:text-white focus:outline-none focus:ring-4 focus:ring-[#9ee7d7]/20"
+            >
+              Save a message for later
+            </a>
           </div>
-          <p className="mt-4 text-center font-display text-xl text-roseglow/90 sm:text-2xl">
-            Play this and takhyly eny bar'uslek bel turta
-          </p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.1, delay: 0.2, ease: "easeOut" }}
-          className="animate-float"
+          className="hidden animate-float lg:block"
         >
           <WaxingCrescentMoon />
         </motion.div>

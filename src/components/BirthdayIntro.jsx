@@ -2,6 +2,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import StarField from "./StarField.jsx";
 
+const fallingStars = Array.from({ length: 34 }, (_, index) => ({
+  id: index,
+  left: `${(index * 29) % 100}%`,
+  delay: `${(index % 12) * 0.16}s`,
+  duration: `${1.8 + (index % 7) * 0.18}s`,
+  size: index % 6 === 0 ? "falling-star-lg" : index % 3 === 0 ? "falling-star-md" : "",
+}));
+
 export default function BirthdayIntro() {
   const [showIntro, setShowIntro] = useState(true);
 
@@ -23,6 +31,19 @@ export default function BirthdayIntro() {
           className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-[#03040b]"
         >
           <StarField />
+          <div className="falling-stars" aria-hidden="true">
+            {fallingStars.map((star) => (
+              <span
+                key={star.id}
+                className={`falling-star ${star.size}`}
+                style={{
+                  left: star.left,
+                  animationDelay: star.delay,
+                  animationDuration: star.duration,
+                }}
+              />
+            ))}
+          </div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(255,143,184,0.26),transparent_28%),radial-gradient(circle_at_50%_55%,rgba(248,244,223,0.14),transparent_34%),linear-gradient(180deg,#03040b_0%,#10071a_100%)]" />
           <div className="absolute left-[12%] top-[22%] h-2 w-2 animate-twinkle rounded-full bg-moon" />
           <div className="absolute right-[18%] top-[30%] h-1.5 w-1.5 animate-twinkle rounded-full bg-roseglow [animation-delay:0.8s]" />
@@ -41,7 +62,7 @@ export default function BirthdayIntro() {
               transition={{ duration: 1.1, delay: 0.15 }}
               className="text-xs font-semibold uppercase text-roseglow/85 sm:text-sm"
             >
-              May 6, 2000
+              May 6, 1999
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, filter: "blur(10px)" }}
@@ -49,9 +70,9 @@ export default function BirthdayIntro() {
               transition={{ duration: 1.2, delay: 0.35 }}
               className="mt-5 font-display text-5xl leading-[0.95] text-moon drop-shadow-[0_0_34px_rgba(248,244,223,0.45)] sm:text-7xl lg:text-8xl"
             >
-              Happy Birthday
+              Happy Birthday Nounyyy
               <span className="block text-roseglow drop-shadow-[0_0_28px_rgba(255,143,184,0.45)]">
-                to the love of my life
+                This moon and day is yours
               </span>
             </motion.h1>
             <motion.div

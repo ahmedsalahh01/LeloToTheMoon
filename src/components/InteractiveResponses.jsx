@@ -15,7 +15,7 @@ export default function InteractiveResponses() {
   };
 
   return (
-    <section id="feelings" className="relative px-5 py-24 sm:py-32">
+    <section id="feelings" className="section-shell">
       <div className="mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -24,9 +24,11 @@ export default function InteractiveResponses() {
           transition={{ duration: 0.7 }}
           className="text-center"
         >
-          <h2 className="font-display text-4xl text-moon sm:text-6xl">A Little Journey For Your Heart</h2>
-          <p className="mx-auto mt-5 max-w-3xl rounded-[1.5rem] border border-roseglow/25 bg-roseglow/[0.08] px-5 py-4 font-display text-2xl leading-8 text-roseglow shadow-[0_0_28px_rgba(255,143,184,0.12)] backdrop-blur-xl sm:text-3xl">
-            Don't open anything from this now, this is for you later on lma tehsy enk mehtaga message meny wana msh mawgud
+          <p className="section-kicker">For later</p>
+          <h2 className="section-title">A little journey for your heart.</h2>
+          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-white/64">
+            Don&apos;t open this part all at once. It is for later, lma tehsy enk
+            mehtaga message meny wana msh mawgud.
           </p>
         </motion.div>
 
@@ -38,15 +40,17 @@ export default function InteractiveResponses() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, x: -28, scale: 0.98 }}
               transition={{ duration: 0.38 }}
-              className="relative overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.07] p-7 text-center shadow-glass backdrop-blur-xl sm:p-10"
+              className="relative overflow-hidden rounded-lg border border-white/14 bg-[#101719]/78 p-7 text-center shadow-glass backdrop-blur-xl sm:p-10"
             >
-              <div className="absolute left-8 top-8 h-2 w-2 rounded-full bg-roseglow/70 shadow-[0_0_20px_rgba(255,143,184,0.8)]" />
-              <div className="absolute right-10 top-14 h-1.5 w-1.5 rounded-full bg-moon/80 shadow-[0_0_18px_rgba(248,244,223,0.8)]" />
+              <div className="absolute left-8 top-8 h-2 w-2 rounded-full bg-[#ffb3cf]/70 shadow-[0_0_20px_rgba(255,179,207,0.8)]" />
+              <div className="absolute right-10 top-14 h-1.5 w-1.5 rounded-full bg-[#9ee7d7]/80 shadow-[0_0_18px_rgba(158,231,215,0.8)]" />
 
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-roseglow/80">
-                {currentStep.eyebrow}
-              </p>
-              <h3 className="mt-4 font-display text-4xl leading-tight text-moon sm:text-5xl">
+              {currentStep.eyebrow && (
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#9ee7d7]/80">
+                  {currentStep.eyebrow}
+                </p>
+              )}
+              <h3 className="mt-4 font-display text-4xl leading-tight text-[#fff7db] sm:text-5xl">
                 {currentStep.title}
               </h3>
 
@@ -61,7 +65,7 @@ export default function InteractiveResponses() {
                         key={answer.label}
                         type="button"
                         onClick={() => moveToStep(answer.next)}
-                        className="rounded-2xl border border-white/10 bg-white/[0.065] px-5 py-5 font-semibold text-white/82 transition hover:-translate-y-1 hover:border-roseglow/55 hover:bg-roseglow hover:text-[#210918] focus:outline-none focus:ring-4 focus:ring-roseglow/25"
+                        className="rounded-lg border border-white/10 bg-white/[0.065] px-5 py-5 font-semibold text-white/82 transition hover:-translate-y-1 hover:border-[#9ee7d7]/55 hover:bg-[#9ee7d7] hover:text-[#101719] focus:outline-none focus:ring-4 focus:ring-[#9ee7d7]/25"
                       >
                         {answer.label}
                       </button>
@@ -89,7 +93,7 @@ export default function InteractiveResponses() {
                     </div>
                   )}
                   {currentStep.spotifyCaption && (
-                    <p className="mt-4 text-center font-display text-xl text-roseglow/90 sm:text-2xl">
+                    <p className="mt-4 text-center font-display text-xl text-[#ffb3cf]/90 sm:text-2xl">
                       {currentStep.spotifyCaption}
                     </p>
                   )}

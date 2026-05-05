@@ -3,23 +3,20 @@ import { spotifyPlaylist } from "../data/content.js";
 
 export default function MusicSection() {
   return (
-    <section className="relative px-5 py-24 sm:py-32">
-      <div className="mx-auto max-w-4xl text-center">
+    <section className="section-shell">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.8fr_1fr]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.65 }}
         >
-          <p className="text-sm uppercase tracking-[0.34em] text-roseglow/75">
+          <p className="section-kicker">
             Press Play
           </p>
-          <h2 className="mt-4 font-display text-4xl text-moon sm:text-6xl">
+          <h2 className="section-title">
             {spotifyPlaylist.title}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-white/62">
-            A soundtrack for reading, remembering, and missing each other softly.
-          </p>
         </motion.div>
 
         <motion.div
@@ -27,7 +24,7 @@ export default function MusicSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.65, delay: 0.1 }}
-          className="mx-auto mt-10 w-full max-w-[690px] overflow-hidden rounded-[1.25rem] border border-white/20 bg-black/20 p-2 shadow-glass backdrop-blur-xl"
+          className="w-full overflow-hidden rounded-lg border border-white/16 bg-black/30 p-2 shadow-glass backdrop-blur-xl"
         >
           <iframe
             title={spotifyPlaylist.title}

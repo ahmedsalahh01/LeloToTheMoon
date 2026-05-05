@@ -3,13 +3,14 @@ import { letters } from "../data/content.js";
 
 export default function LettersSection() {
   return (
-    <section id="letters" className="relative px-5 py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl">
-        <div className="text-center">
-          <h2 className="font-display text-4xl text-moon sm:text-6xl">Happy birthday to the light of my life</h2>
+    <section id="letters" className="section-shell">
+      <div className="mx-auto max-w-7xl">
+        <div className="max-w-3xl">
+          <p className="section-kicker">The main gift</p>
+          <h2 className="section-title">A birthday letter written under your moon.</h2>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        <div className="mt-12 grid gap-5 lg:grid-cols-2">
           {letters.map((letter, index) => (
             <motion.article
               key={letter.title}
@@ -17,12 +18,12 @@ export default function LettersSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, delay: index * 0.08 }}
-              className="relative min-h-72 overflow-hidden rounded-[2rem] border border-white/35 bg-white/[0.075] p-7 shadow-[0_0_0_1px_rgba(255,143,184,0.08),0_24px_80px_rgba(0,0,0,0.34)] backdrop-blur-2xl sm:p-10"
+              className="letter-panel"
             >
-              <div className="pointer-events-none absolute inset-3 rounded-[1.6rem] border border-roseglow/20" />
-              <div className="pointer-events-none absolute -right-16 -top-20 h-44 w-44 rounded-full bg-roseglow/12 blur-3xl" />
-              <div className="pointer-events-none absolute -bottom-20 -left-16 h-44 w-44 rounded-full bg-moon/10 blur-3xl" />
-              <h3 className="font-display text-3xl text-roseglow sm:text-4xl">{letter.title}</h3>
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#9ee7d7]/80">
+                For nouny
+              </p>
+              <h3 className="mt-4 font-display text-3xl text-[#fff7db] sm:text-4xl">{letter.title}</h3>
               <p className="mt-5 whitespace-pre-line text-lg leading-9 text-white/78">{letter.body}</p>
             </motion.article>
           ))}
