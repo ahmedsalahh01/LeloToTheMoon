@@ -63,7 +63,6 @@ export default function AgeOrbitSection() {
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.7 }}
         >
-          <p className="section-kicker">Age orbit</p>
           <h2 className="section-title">The universe has been lucky for this long.</h2>
           <p className="mt-5 max-w-xl text-lg leading-8 text-white/64">
             Since May 6, 1999, the clock has been quietly counting every moment

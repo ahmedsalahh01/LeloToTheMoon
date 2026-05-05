@@ -139,12 +139,6 @@ export default function Hero() {
             >
               Open your moon letter
             </button>
-            <a
-              href="#feelings"
-              className="rounded-full border border-white/20 bg-white/[0.06] px-8 py-4 font-semibold text-white/82 backdrop-blur-md transition hover:-translate-y-1 hover:border-[#9ee7d7]/60 hover:text-white focus:outline-none focus:ring-4 focus:ring-[#9ee7d7]/20"
-            >
-              Save a message for later
-            </a>
           </div>
         </motion.div>
         <motion.div

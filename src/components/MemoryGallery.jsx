@@ -7,7 +7,6 @@ export default function MemoryGallery() {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
-            <p className="section-kicker">Tiny museum</p>
             <h2 className="section-title">Moments that still shine when the screen goes dark.</h2>
           </div>
           <p className="max-w-sm text-sm leading-6 text-white/58">

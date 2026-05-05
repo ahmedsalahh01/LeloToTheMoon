@@ -16,7 +16,6 @@ export default function LoveStarsSection() {
           transition={{ duration: 0.7 }}
           className="mx-auto max-w-4xl text-center"
         >
-          <p className="section-kicker">Reason constellation</p>
           <h2 className="section-title">Click the stars. Each one knows why I love nouny.</h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/64">
             I could write forever, but the sky looks better when every reason
